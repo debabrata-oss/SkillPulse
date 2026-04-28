@@ -11,4 +11,4 @@ jobs:
               uses: actions/checkout@v4 # clonce the code ubuntu runner 
           
             - name: setup docker
-              uses: docker/setup-buildx-action@4 
+              uses: docker/setup-buildx-action@v4 
