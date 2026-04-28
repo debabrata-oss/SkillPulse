@@ -2,14 +2,14 @@ name: TWS CD Workflow
 
 
 on:
-    workflow_run:
-        workflows: ["TWS CI Workflow"]
-        types: [completed]
+  workflow_run:
+      workflows: ["TWS CI Workflow"]
+      types: [completed]
 
 
 jobs:
     deploy:
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-lastest
         steps:
           - uses: actions/checkout@v4 ## this happen in runner 
 
