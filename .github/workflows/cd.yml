@@ -3,13 +3,13 @@ name: TWS CD Workflow
 
 on:
     workflow_run:
-        workflows: ["TWS CI workflows"]
+        workflows: ["TWS CI Workflow"]
         types: [completed]
 
 
 jobs:
     deploy:
-        runs-on: ubuntu-lastest
+        runs-on: ubuntu-latest
         steps:
           - uses: actions/checkout@v4 ## this happen in runner 
 
