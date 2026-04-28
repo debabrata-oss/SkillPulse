@@ -5,7 +5,7 @@ on:
 
 jobs:
     build: 
-        runs-on: ubuntu-lastest # github runner (free)
+        runs-on: ubuntu-latest # github runner (free)
         steps:
             - name: Checkout code 
               uses: actions/checkout@v4 # clonce the code ubuntu runner 
