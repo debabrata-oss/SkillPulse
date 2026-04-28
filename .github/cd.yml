@@ -1,0 +1,30 @@
+name: TWS CD Workflow
+
+
+on:
+    workflow_run:
+        workflows: ["TWS CI workflows"]
+        types: [completed]
+
+
+jobs:
+    deploy:
+        runs-on: ubuntu-lastest
+        steps:
+          - uses: actions/checkout@v4 ## this happen in runner 
+
+            name: Execute remote SSH commands using passwd 
+            uses: appleboy/ssh-action@v1
+            with: 
+               host: ${{ secrets.HOST }}
+               username: ${{ secrets.USERNAME }}
+               key: ${{ secrets.PASSWORD }}
+               script: |
+                 git clone https://github.com/debabrata-oss/SkillPulse.git
+                 cd ~/SkillPulse
+                 git pull origin main
+                 docker compose pull
+                 dcoker compose up -d 
+
+               
+

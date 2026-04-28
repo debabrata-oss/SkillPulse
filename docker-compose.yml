@@ -22,7 +22,7 @@ services:
 
   # Go Backend API
   backend:
-    image: ${DOCKERHUB_USERNAME}/skillpulse-backend:shyam
+    image: ${DOCKERHUB_USERNAME}/skillplus-backend:live
     restart: unless-stopped
     environment:
       DB_HOST: db
